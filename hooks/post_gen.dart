@@ -12,7 +12,6 @@ Future<void> run(HookContext context) async {
 
   final progress = context.logger.progress('Formatting code in $fileName');
 
-  // Run `dart format` on the specific file.
   final result = await Process.run('dart', ['format', filePath]);
 
   if (result.exitCode == 0) {
