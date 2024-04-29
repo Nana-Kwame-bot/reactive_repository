@@ -32,7 +32,7 @@ mason make reactive_repository
 | `bloc_state_name` | The name of the bloc state  | `CounterState` | `string` |
 
 
-## Example Output
+## Example Output 📦
 
 File `counter_state_repository.dart`
 
