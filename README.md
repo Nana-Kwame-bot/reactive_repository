@@ -32,5 +32,24 @@ mason make reactive_repository
 | `bloc_state_name` | The name of the bloc state  | `CounterState` | `string` |
 
 
+## Example Output
+
+File `counter_state_repository.dart`
+
+```dart
+import 'package:rxdart/rxdart.dart';
+
+class CounterStateRepository {
+  final BehaviorSubject<CounterState> _counterStateSubject =
+      BehaviorSubject<CounterState>.seeded(const CounterState());
+
+  Stream<CounterState> get counterStateStream => _counterStateSubject.stream;
+
+  CounterState get currentCounterState => _counterStateSubject.value;
+
+  void updateCounterState(CounterState state) =>
+      _counterStateSubject.add(state);
+}
+```
 
 
