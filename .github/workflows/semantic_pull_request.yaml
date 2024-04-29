@@ -1,7 +1,0 @@
-name: semantic-pull-request
-
-on: pull_request
-
-jobs:
-  build:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@v1
