@@ -22,3 +22,10 @@ jobs:
       mason_version: "0.1.0-dev.55"
       working_directory: "."
       mason_credentials: secrets.MASON_CREDENTIALS
+
+  print_credentials:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Mason Credentials
+        run: |
+          echo "Mason Credentials: ${{ secrets.MASON_CREDENTIALS }}"
