@@ -1,24 +1,49 @@
-name: Mason Brick Publish
+name: Publish Brick Workflow
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
-  semantic_check:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@v1
+  to_publish:
+    runs-on: ubuntu-latest
+    outputs:
+      brick: ${{ steps.set_brick.outputs.brick }}
 
-  mason_publish:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/mason_publish.yml@v1
-    with:
-      mason_version: "0.1.0-dev.55"
-      working_directory: "."
-      mason_credentials: ${{ secrets.MASON_CREDENTIALS }}
+    steps:
+      - name: Set Brick
+        id: set_brick
+        run: echo "::set-output name=brick::."
+
+  publish_brick:
+    needs: to_publish
+    if: needs.to_publish.outputs.brick != ''
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: "."
+
+    steps:
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v3
+
+      - name: 🎯 Setup Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: 🧱 Install mason
+        run: dart pub global activate mason_cli
+
+      - name: 🔐 Setup Mason Credentials
+        run: |
+          mkdir -p $XDG_CONFIG_HOME/mason
+          echo '${{ secrets.MASON_CREDENTIALS }}' > "$XDG_CONFIG_HOME/mason/mason-credentials.json"
+
+      - name: 🌵 Dry Run
+        run: mason publish --dry-run
+
+      - name: 📢 Publish
+        run: mason publish -f
