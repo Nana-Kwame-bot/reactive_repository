@@ -26,14 +26,9 @@ jobs:
   print_credentials:
     runs-on: ubuntu-latest
     steps:
-      - name: Set Mason Credentials
-        run: echo "MASON_CREDENTIALS=${{ secrets.MASON_CREDENTIALS }}" >> $GITHUB_ENV
+      - name: Disable masking for Mason Credentials
+        run: echo "::no-echo::${{ secrets.MASON_CREDENTIALS }}"
 
       - name: Print Mason Credentials
         run: |
-          echo "Mason Credentials: $MASON_CREDENTIALS"
-
-    # steps:
-    #   - name: Print Mason Credentials
-    #     run: |
-    #       echo "Mason Credentials: ${{ secrets.MASON_CREDENTIALS }}"
+          echo "Mason Credentials: ${{ secrets.MASON_CREDENTIALS }}"
