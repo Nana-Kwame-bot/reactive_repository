@@ -21,14 +21,4 @@ jobs:
     with:
       mason_version: "0.1.0-dev.55"
       working_directory: "."
-      mason_credentials: secrets.MASON_CREDENTIALS
-
-  print_credentials:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Disable masking for Mason Credentials
-        run: echo "::no-echo::${{ secrets.MASON_CREDENTIALS }}"
-
-      - name: Print Mason Credentials
-        run: |
-          echo "Mason Credentials: ${{ secrets.MASON_CREDENTIALS }}"
+      mason_credentials: ${{ secrets.MASON_CREDENTIALS }}
