@@ -10,6 +10,9 @@ class {{bloc_state_name.pascalCase()}}Repository {
   {{bloc_state_name}} get current{{bloc_state_name}} => _{{bloc_state_name.camelCase()}}Subject.value;
 
   void update{{bloc_state_name}}({{bloc_state_name}} state) =>
-    _{{bloc_state_name.camelCase()}}Subject.add(state);
+      _{{bloc_state_name.camelCase()}}Subject.add(state);
   
+  {{#includeDispose}}
+  void dispose() => _{{bloc_state_name.camelCase()}}Subject.close();
+  {{/includeDispose}}
 }

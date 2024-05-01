@@ -13,7 +13,7 @@ version: 0.1.0+1
 # The following defines the environment for the current brick.
 # It includes the version of mason that the brick requires.
 environment:
-  mason: ">=0.1.0-dev.55 <0.1.0"
+  mason: ">=0.1.0-dev.53 <0.1.0"
 
 # Variables specify dynamic values that your brick depends on.
 # Zero or more variables can be specified for a given brick.
@@ -31,3 +31,9 @@ vars:
     description: The bloc state name
     default: CounterState
     prompt: What is the name of your bloc state?
+
+  includeDispose:
+    type: boolean
+    description: Include a dispose method to clean up resources.
+    default: true
+    prompt: Do you want to include a dispose method?
