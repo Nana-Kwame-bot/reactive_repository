@@ -21,5 +21,4 @@ jobs:
     with:
       mason_version: "0.1.0-dev.55"
       working_directory: "."
-    env:
-      MASON_CREDENTIALS: ${{ secrets.MASON_CREDENTIALS }}
+      mason_credentials: ${{ secrets.MASON_CREDENTIALS }}
