@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Set Brick
         id: set_brick
-        run: echo "::set-output name=brick::reactive_repository" # replace brick_value with the actual value
+        run: echo "::set-output name=brick::."
 
   publish_brick:
     needs: to_publish
