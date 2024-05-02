@@ -49,6 +49,8 @@ class CounterStateRepository {
 
   void updateCounterState(CounterState state) =>
       _counterStateSubject.add(state);
+
+  void dispose() => _counterStateSubject.close();
 }
 ```
 
