@@ -16,7 +16,7 @@ To use the Reactive Repository brick, you need to have Dart and rxdart package i
 
 ```yaml
 dependencies:
-  rxdart: ^0.27.0
+  rxdart: any
 ```
 
 ## Usage 🎨
