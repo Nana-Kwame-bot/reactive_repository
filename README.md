@@ -27,9 +27,12 @@ mason make reactive_repository
 
 ## Variables ✨
 
-| Variable          | Description                 | Default        | Type     |
-| ----------------- | --------------------------- | -------------- | -------- |
-| `bloc_state_name` | The name of the bloc state  | `CounterState` | `string` |
+| Variable              | Description                 | Default        | Type     |
+| -----------------     | --------------------------- | -------------- | -------- |
+| `bloc_state_name`     | The name of the bloc state  | `CounterState` | `string` |
+| `includeDispose`      | Include a dispose method    | `true`         | `boolean`|
+| `seedBehaviorSubject` | Seed the BehaviorSubject    | `true`         | `boolean`|
+
 
 
 ## Example Output 📦
@@ -37,19 +40,25 @@ mason make reactive_repository
 File `counter_state_repository.dart`
 
 ```dart
-import 'package:rxdart/rxdart.dart';
+// Imports the RxDart package for reactive programming support.
+import 'package:rxdart/rxdart.dart'; 
 
 class CounterStateRepository {
+  // Declares a BehaviorSubject to hold and stream the CounterState. It's seeded with an initial state.
   final BehaviorSubject<CounterState> _counterStateSubject =
       BehaviorSubject<CounterState>.seeded(const CounterState());
 
+  // Exposes the stream of counter state updates for subscription.
   Stream<CounterState> get counterStateStream => _counterStateSubject.stream;
 
+  // Provides synchronous access to the current state of the counter.
   CounterState get currentCounterState => _counterStateSubject.value;
 
+  // Allows for the counter state to be updated, notifying all stream subscribers.
   void updateCounterState(CounterState state) =>
       _counterStateSubject.add(state);
 
+  // Closes the BehaviorSubject stream to prevent memory leaks upon disposal.
   void dispose() => _counterStateSubject.close();
 }
 ```

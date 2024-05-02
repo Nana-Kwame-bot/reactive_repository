@@ -10,3 +10,7 @@
 # 0.1.2
 
 - Updated the README to include the dispose method.
+
+# 0.1.3
+
+- Updated the README to include the seedBehaviorSubject variable.
