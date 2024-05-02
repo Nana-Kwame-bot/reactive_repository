@@ -40,25 +40,32 @@ mason make reactive_repository
 File `counter_state_repository.dart`
 
 ```dart
-// Imports the RxDart package for reactive programming support.
-import 'package:rxdart/rxdart.dart'; 
+import 'package:rxdart/rxdart.dart';
 
+/// A repository class for [CounterState].
+///
+/// This class provides a way to manage and update the state of [CounterState].
 class CounterStateRepository {
-  // Declares a BehaviorSubject to hold and stream the CounterState. It's seeded with an initial state.
+  /// A [BehaviorSubject] to hold and stream the [CounterState].
+  ///
+  /// It's seeded with an initial state if seedBehaviorSubject is true.
   final BehaviorSubject<CounterState> _counterStateSubject =
       BehaviorSubject<CounterState>.seeded(const CounterState());
 
-  // Exposes the stream of counter state updates for subscription.
+  /// A stream of [CounterState] updates for subscription.
   Stream<CounterState> get counterStateStream => _counterStateSubject.stream;
 
-  // Provides synchronous access to the current state of the counter.
+  /// Provides synchronous access to the current state.
   CounterState get currentCounterState => _counterStateSubject.value;
 
-  // Allows for the counter state to be updated, notifying all stream subscribers.
+  /// Allows for the [CounterState] to be updated, notifying all
+  /// stream subscribers.
+  ///
+  /// The [state] is the new state to be added to the stream.
   void updateCounterState(CounterState state) =>
       _counterStateSubject.add(state);
 
-  // Closes the BehaviorSubject stream to prevent memory leaks upon disposal.
+  /// Closes the [BehaviorSubject] stream to prevent memory leaks upon disposal.
   void dispose() => _counterStateSubject.close();
 }
 ```
