@@ -70,4 +70,39 @@ class CounterStateRepository {
 }
 ```
 
+### Updaate State
+
+```dart
+  @override
+  /// Called when the state of the counter changes.
+  /// 
+  /// This method is called whenever there is a change in the [CounterState].
+  /// It updates the counter state in the [_counterStateRepository] with the
+  /// [change.nextState].
+  void onChange(Change<CounterState> change) {
+    super.onChange(change);
+    _counterStateRepository.updateCounterState(change.nextState);
+  }
+```
+
+### Read State
+
+```dart
+    /// Handles the stream request event and updates the timer state.
+    ///
+    /// This method listens to the counter state stream and updates the timer state
+    /// based on the received data. It emits a new [TimerState] with the updated count.
+    ///
+    FutureOr<void> _onStreamRequested(
+      _StreamRequested event,
+      Emitter<TimerState> emit,
+    ) async {
+      await emit.forEach<CounterState>(
+        _counterStateRepository.counterStateStream,
+        onData: (counterState) {
+          return state.copyWith(count: counterState.value);
+        },
+      );
+    }
+```
 
