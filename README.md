@@ -12,7 +12,7 @@ This brick is designed to help you to connect your blocs through the domain laye
 
 ## Getting Started 🚀
 
-To use the Reactive Repository brick, you need to have Dart and rxdart package in your environment. If you haven't already, add rxdart to your project's pubspec.yaml:
+To use the Reactive Repository brick, you need to have the rxdart package in your environment. If you haven't already, add rxdart to your project's pubspec.yaml:
 
 With Dart:
 ```bash
@@ -24,11 +24,38 @@ With Flutter:
 flutter pub add rxdart
 ```
 
-## Usage 🎨
+## Setup 🧑‍💻
+
+Ensure you have the mason_cli installed.
+
+```bash
+# 🎯 Activate from https://pub.dev
+dart pub global activate mason_cli
+```
+
+```bash
+# 🍺 Or install from https://brew.sh
+brew tap felangel/mason
+brew install mason
+```
 
 ```bash
 mason make reactive_repository
 ```
+
+### Installation ☁️
+
+```bash
+# Install globally
+mason add -g reactive_repository
+```
+
+### Usage 🎨
+
+```bash
+mason make reactive_repository
+```
+
 
 ## Variables ✨
 
@@ -75,7 +102,7 @@ class CounterStateRepository {
 }
 ```
 
-### Updaate State
+### Update State 🔄 
 
 ```dart
   /// Called when the state of the counter changes.
@@ -90,7 +117,7 @@ class CounterStateRepository {
   }
 ```
 
-### Read State
+### Read State 📖
 
 ```dart
     /// Handles the stream request event and updates the timer state.

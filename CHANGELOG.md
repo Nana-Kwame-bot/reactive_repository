@@ -26,3 +26,7 @@
 # 0.1.6
 
 - Updated the README with rx_dart import instructions.
+
+# 0.1.7
+
+- Updated the README with mason CLI instructions.
