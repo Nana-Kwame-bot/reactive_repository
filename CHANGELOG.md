@@ -18,3 +18,7 @@
 # 0.1.4
 
 - Updated the README to include updating and reading the BehaviorSubject.
+
+# 0.1.5
+
+- Updated the README to include the current state getter.

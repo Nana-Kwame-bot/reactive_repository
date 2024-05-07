@@ -73,12 +73,12 @@ class CounterStateRepository {
 ### Updaate State
 
 ```dart
-  @override
   /// Called when the state of the counter changes.
   /// 
   /// This method is called whenever there is a change in the [CounterState].
-  /// It updates the counter state in the [_counterStateRepository] with the
+  /// It updates the counter state in the _counterStateRepository with the
   /// [change.nextState].
+  @override
   void onChange(Change<CounterState> change) {
     super.onChange(change);
     _counterStateRepository.updateCounterState(change.nextState);
