@@ -26,7 +26,7 @@ flutter pub add rxdart
 
 ## Setup 🧑‍💻
 
-Ensure you have the mason_cli installed.
+Ensure you have the [mason_cli](https://github.com/felangel/mason/tree/master/packages/mason_cli) installed.
 
  🎯 Activate from https://pub.dev
 
