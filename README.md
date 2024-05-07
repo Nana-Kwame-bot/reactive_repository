@@ -28,29 +28,29 @@ flutter pub add rxdart
 
 Ensure you have the mason_cli installed.
 
+ 🎯 Activate from https://pub.dev
+
 ```bash
-# 🎯 Activate from https://pub.dev
 dart pub global activate mason_cli
 ```
 
-```bash
-# 🍺 Or install from https://brew.sh
-brew tap felangel/mason
-brew install mason
-```
+🍺 Or install from https://brew.sh
 
 ```bash
-mason make reactive_repository
+brew tap felangel/mason && brew install mason
 ```
 
 ### Installation ☁️
 
+Install globally
+
 ```bash
-# Install globally
 mason add -g reactive_repository
 ```
 
 ### Usage 🎨
+
+Run the following command in the directory you would like to make the reactive repository.
 
 ```bash
 mason make reactive_repository
@@ -69,7 +69,7 @@ mason make reactive_repository
 
 ## Example Output 📦
 
-File `counter_state_repository.dart`
+`counter_state_repository.dart`
 
 ```dart
 import 'package:rxdart/rxdart.dart';

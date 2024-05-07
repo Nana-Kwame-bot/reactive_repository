@@ -30,3 +30,7 @@
 # 0.1.7
 
 - Updated the README with mason CLI instructions.
+
+# 0.1.8
+
+- Updated the README with clearer mason CLI instructions.
