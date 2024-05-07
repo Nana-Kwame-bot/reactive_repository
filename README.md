@@ -104,6 +104,8 @@ class CounterStateRepository {
 
 ### Update State 🔄 
 
+`counter_bloc.dart`
+
 ```dart
   /// Called when the state of the counter changes.
   /// 
@@ -118,6 +120,8 @@ class CounterStateRepository {
 ```
 
 ### Read State 📖
+
+`timer_bloc.dart`
 
 ```dart
     /// Handles the stream request event and updates the timer state.

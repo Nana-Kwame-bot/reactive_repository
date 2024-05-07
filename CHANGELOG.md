@@ -38,3 +38,7 @@
 # 0.1.9
 
 - Updated the README with clearer mason CLI instructions.
+
+# 0.1.10
+
+- Updated the README with clearer mason CLI instructions.
