@@ -22,3 +22,7 @@
 # 0.1.5
 
 - Updated the README to include the current state getter.
+
+# 0.1.6
+
+- Updated the README with rx_dart import instructions.

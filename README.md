@@ -12,11 +12,16 @@ This brick is designed to help you to connect your blocs through the domain laye
 
 ## Getting Started 🚀
 
-To use the Reactive Repository brick, you need to have Dart and rxdart package in your environment. If you haven't already, add rxdart to your project's pubspec.yaml under dependencies:
+To use the Reactive Repository brick, you need to have Dart and rxdart package in your environment. If you haven't already, add rxdart to your project's pubspec.yaml:
 
-```yaml
-dependencies:
-  rxdart: any
+With Dart:
+```bash
+dart pub add rxdart
+```
+
+With Flutter:
+```bash
+flutter pub add rxdart
 ```
 
 ## Usage 🎨
