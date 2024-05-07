@@ -14,3 +14,7 @@
 # 0.1.3
 
 - Updated the README to include the seedBehaviorSubject variable.
+
+# 0.1.4
+
+- Updated the README to include updating and reading the BehaviorSubject.
